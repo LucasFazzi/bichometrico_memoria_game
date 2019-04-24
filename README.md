@@ -16,7 +16,7 @@ The sound effects are
 1) https://freesound.org/people/NenadSimic/ 
 2) https://freesound.org/people/suntemple/ 
 3) https://freesound.org/people/mickleness/ 
-4) https : //opengameart.org/users/haeldb
+4) https://opengameart.org/users/haeldb
 
 The source code has undergone some extra implementations, to be able to create the different levels and 
 some effects of transition and animation of victory, besides to remove some texts just for aesthetic purpose.
