@@ -27,6 +27,10 @@ but the source code base follows the same.
 Feel free to use the game for your intended purpose (commercial, educational), 
 including sprites created specifically for the specific case.
 
+you can download the game here:
+
+https://play.google.com/store/apps/details?id=com.cohbo.bichometricomemoria_release_1&hl=pt_BR
+
 
 PS: 
 I will organize the file divided correctly here in github, 
