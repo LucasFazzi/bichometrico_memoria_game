@@ -1,0 +1,588 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scripts/GameManager_medium.gd" type="Script" id=1]
+[ext_resource path="res://sprites/tela medio.png" type="Texture" id=2]
+[ext_resource path="res://sprites/caixa texto3.png" type="Texture" id=3]
+[ext_resource path="res://scripts/Card.gd" type="Script" id=4]
+[ext_resource path="res://sprites/versocartas.png" type="Texture" id=5]
+[ext_resource path="res://SFX/correct_1.wav" type="AudioStream" id=6]
+[ext_resource path="res://SFX/menu_selection_1.wav" type="AudioStream" id=7]
+[ext_resource path="res://SFX/gmae.wav" type="AudioStream" id=8]
+[ext_resource path="res://fonts/Quicksand-Bold.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://scripts/CardOneName.gd" type="Script" id=10]
+[ext_resource path="res://scripts/CardTwoName.gd" type="Script" id=11]
+[ext_resource path="res://sprites/botao voltar.png" type="Texture" id=12]
+[ext_resource path="res://sprites/caixa texto1.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 251.689, 250.482 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 19
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 160
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=5]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("BackToMenuButton:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ), Vector2( 0.65, 0.65 ), Vector2( 0.6, 0.6 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "parabens"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Parabens:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.631373, 0.772549, 0.0901961, 1 ), Color( 0, 0.658824, 0.513726, 1 ), Color( 0.921569, 0.4, 0.0313726, 1 ), Color( 0.396078, 0.176471, 0.52549, 1 ), Color( 0.631373, 0.772549, 0.0901961, 1 ) ]
+}
+
+[node name="GameManger_medium" type="Node2D"]
+position = Vector2( 88, 0 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 12.3286, 273.754, 536.858, 793.0, 1037.09, 986.121, 1008.59 ],
+"_edit_vertical_guides_": [ 11.9052, 267.325, 522.219, 775.482, 1032.98, 1032.21, 1287.68, 1542.32, 813.743, 1786.57, 46.2245 ]
+}
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 829.886, 528.914 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 2 )
+
+[node name="fundo_texto" type="Sprite" parent="."]
+position = Vector2( 157.319, 942.869 )
+scale = Vector2( 0.380025, 0.380025 )
+texture = ExtResource( 3 )
+
+[node name="Card1" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 45, 135 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card1"]
+position = Vector2( 10, 7 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card1"]
+shape = SubResource( 1 )
+
+[node name="Card2" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 300, 135 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card2"]
+position = Vector2( 10, 7 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card2"]
+shape = SubResource( 1 )
+
+[node name="Card3" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 555, 135 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card3"]
+position = Vector2( 10, 7 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card3"]
+shape = SubResource( 1 )
+
+[node name="Card4" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 810, 135 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card4"]
+position = Vector2( 7, 7 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card4"]
+shape = SubResource( 1 )
+
+[node name="Card5" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1065, 135 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card5"]
+position = Vector2( 10, 7 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card5"]
+shape = SubResource( 1 )
+
+[node name="Card6" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1320, 135 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card6"]
+position = Vector2( 10, 7 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card6"]
+shape = SubResource( 1 )
+
+[node name="Card7" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1575, 135 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card7"]
+position = Vector2( 10, 7 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card7"]
+shape = SubResource( 1 )
+
+[node name="Card8" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 45, 395 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card8"]
+position = Vector2( 9.99998, 9.99998 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card8"]
+shape = SubResource( 1 )
+
+[node name="Card9" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 300, 395 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card9"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card9"]
+shape = SubResource( 1 )
+
+[node name="Card10" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 555, 395 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card10"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card10"]
+shape = SubResource( 1 )
+
+[node name="Card11" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 810, 395 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card11"]
+position = Vector2( 6.66665, 9.99998 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card11"]
+shape = SubResource( 1 )
+
+[node name="Card12" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1065, 395 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card12"]
+position = Vector2( 9.99998, 9.99998 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card12"]
+shape = SubResource( 1 )
+
+[node name="Card13" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1320, 395 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card13"]
+position = Vector2( 9.99998, 9.99998 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card13"]
+shape = SubResource( 1 )
+
+[node name="Card14" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1575, 395 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card14"]
+position = Vector2( 9.99998, 9.99998 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card14"]
+shape = SubResource( 1 )
+
+[node name="Card15" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 45, 658 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card15"]
+position = Vector2( 9.99998, 9.99998 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card15"]
+shape = SubResource( 1 )
+
+[node name="Card16" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 300, 658 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card16"]
+position = Vector2( 9.99998, 9.99998 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card16"]
+shape = SubResource( 1 )
+
+[node name="Card17" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 555, 658 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card17"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card17"]
+shape = SubResource( 1 )
+
+[node name="Card18" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 810, 658 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card18"]
+position = Vector2( 7, 10 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card18"]
+shape = SubResource( 1 )
+
+[node name="Card19" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1065, 658 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card19"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card19"]
+shape = SubResource( 1 )
+
+[node name="Card20" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1320, 658 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card20"]
+position = Vector2( 9.99998, 9.99998 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card20"]
+shape = SubResource( 1 )
+
+[node name="Card21" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1575, 658 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card21"]
+position = Vector2( 9.99998, 9.99998 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card21"]
+shape = SubResource( 1 )
+
+[node name="Card22" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 555, 915 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card22"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card22"]
+shape = SubResource( 1 )
+
+[node name="Card23" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 810, 915 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card23"]
+position = Vector2( 7, 10 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card23"]
+shape = SubResource( 1 )
+
+[node name="Card24" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1065, 915 )
+scale = Vector2( 0.49, 0.49 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Card24"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.71, 0.71 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card24"]
+shape = SubResource( 1 )
+
+[node name="correct_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -15.0
+
+[node name="Click_mouse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -15.0
+
+[node name="you_win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -5.0
+
+[node name="CardOneName" type="RichTextLabel" parent="."]
+modulate = Color( 0.470588, 0.470588, 0.470588, 1 )
+margin_left = -45.3124
+margin_top = 875.12
+margin_right = 254.687
+margin_bottom = 933.12
+rect_scale = Vector2( 1.7, 1.7 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Carta 1"
+script = ExtResource( 10 )
+
+[node name="CardTwoName" type="RichTextLabel" parent="."]
+modulate = Color( 0.470588, 0.470588, 0.470588, 1 )
+margin_left = -45.2097
+margin_top = 916.686
+margin_right = 254.79
+margin_bottom = 974.686
+rect_scale = Vector2( 1.7, 1.7 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Carta 2"
+script = ExtResource( 11 )
+
+[node name="NumberOfMatches" type="RichTextLabel" parent="."]
+modulate = Color( 0.470588, 0.470588, 0.470588, 1 )
+margin_left = -45.4586
+margin_top = 976.001
+margin_right = 432.545
+margin_bottom = 1071.0
+rect_scale = Vector2( 1.7, 1.7 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Número de Acertos: 0
+"
+
+[node name="BackToMenuButton" type="Button" parent="."]
+margin_left = 1443.58
+margin_top = 943.958
+margin_right = 1855.58
+margin_bottom = 1065.96
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = SubResource( 3 )
+icon = ExtResource( 12 )
+flat = true
+
+[node name="win_color" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 845.978, 794.484 )
+scale = Vector2( 2.06024, 2.68691 )
+texture = ExtResource( 13 )
+
+[node name="winning_fireworks" type="CPUParticles2D" parent="."]
+position = Vector2( 765.476, 519.681 )
+amount = 100
+lifetime = 25.0
+preprocess = 1.0
+speed_scale = 5.0
+explosiveness = 0.17
+randomness = 0.39
+spread = 142.71
+flatness = 0.24
+gravity = Vector2( 0, 0 )
+initial_velocity = 101.0
+initial_velocity_random = 0.1
+angular_velocity = -288.0
+angular_velocity_random = 0.36
+linear_accel = 14.29
+radial_accel = 14.29
+scale_amount = 29.57
+scale_amount_random = 0.56
+color = Color( 0.156863, 1, 0.901961, 1 )
+hue_variation = -1.0
+hue_variation_random = 1.0
+
+[node name="Parabens" type="RichTextLabel" parent="."]
+modulate = Color( 0.10685, 0.628815, 0.4578, 1 )
+margin_left = 418.476
+margin_top = 380.641
+margin_right = 1547.48
+margin_bottom = 818.641
+custom_fonts/normal_font = SubResource( 4 )
+text = "Parabéns!"
+
+[node name="button_animation" type="AnimationPlayer" parent="."]
+anims/botao_voltar = SubResource( 5 )
+anims/parabens = SubResource( 6 )
+
+[connection signal="finished" from="Click_mouse" to="." method="_on_Click_mouse_finished"]
+[connection signal="button_down" from="BackToMenuButton" to="." method="_on_BackToMenuButton_button_down"]

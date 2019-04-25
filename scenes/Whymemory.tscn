@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/Whymemory.gd" type="Script" id=1]
+[ext_resource path="res://sprites/tela o jogo.png" type="Texture" id=2]
+[ext_resource path="res://sprites/caixa texto sobre o jogo.png" type="Texture" id=3]
+[ext_resource path="res://fonts/Quicksand-Bold.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://fonts/Symtext.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://sprites/botao voltar.png" type="Texture" id=6]
+[ext_resource path="res://SFX/menu_selection_1.wav" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+extra_spacing_char = 1
+extra_spacing_space = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+extra_spacing_top = 1
+extra_spacing_bottom = -4
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 27
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "button_voltar"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Button:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ), Vector2( 0.65, 0.65 ), Vector2( 0.6, 0.6 ) ]
+}
+
+[node name="MenuScene" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 865.014, 1017.8 ],
+"_edit_vertical_guides_": [ 65.1568 ]
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 0, -10.3437 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="fundo texto" type="Sprite" parent="."]
+position = Vector2( 523.979, 549.732 )
+scale = Vector2( 1.18213, 1.18213 )
+texture = ExtResource( 3 )
+
+[node name="fundo texto2" type="Sprite" parent="."]
+position = Vector2( 1385.43, 782.935 )
+scale = Vector2( 0.854448, 0.810234 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="Credits2" type="RichTextLabel" parent="."]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+margin_left = 108.0
+margin_top = 216.0
+margin_right = 933.0
+margin_bottom = 695.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Desde muito pequeno, o cérebro já é uma unidade de armazenamento e, pouco a pouco, a criança fará de suas experiências o aprendizado para ocupar seus pensamentos, transformando-os em consciência. 
+Por causa disso, jogos como a memória auxiliam nos exercícios que as crianças fazem indiretamente, de uma maneira lúdica, aprendendo uma habilidade que será capaz de ajudar no desenvolvimento para o futuro. 
+Jogar memória é também um exercício de
+aprendizado. Vamos jogar?!"
+scroll_active = false
+
+[node name="credits" type="RichTextLabel" parent="."]
+modulate = Color( 0.584314, 0.505882, 0.678431, 1 )
+margin_left = 1100.0
+margin_top = 549.0
+margin_right = 1691.0
+margin_bottom = 926.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Código fonte: Tzoop 
+https://tzoop.itch.io
+
+Trilha Sonora: AzzyGames
+https://devdevious.itch.io
+(https://www.patreon.com/sharkybutt)
+
+Efeitos Sonoros:
+1) https://freesound.org/people/NenadSimic/
+2) https://freesound.org/people/suntemple/
+3) https://freesound.org/people/mickleness/
+4) https://opengameart.org/users/haeldb"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 58.3341
+margin_top = 953.184
+margin_right = 470.334
+margin_bottom = 1075.18
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = SubResource( 3 )
+icon = ExtResource( 6 )
+flat = true
+
+[node name="button_animation" type="AnimationPlayer" parent="."]
+anims/button_voltar = SubResource( 4 )
+
+[node name="Click_mouse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -15.0
+
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]

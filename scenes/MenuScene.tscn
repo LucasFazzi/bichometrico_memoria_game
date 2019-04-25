@@ -1,0 +1,192 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://scripts/MenuScene.gd" type="Script" id=1]
+[ext_resource path="res://sprites/tela inicial.png" type="Texture" id=2]
+[ext_resource path="res://fonts/Symtext.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sprites/botao sair.png" type="Texture" id=4]
+[ext_resource path="res://sprites/botao o jogo.png" type="Texture" id=5]
+[ext_resource path="res://sprites/botao facil.png" type="Texture" id=6]
+[ext_resource path="res://sprites/botao medio.png" type="Texture" id=7]
+[ext_resource path="res://sprites/botao dificil.png" type="Texture" id=8]
+[ext_resource path="res://SFX/menu_selection_1.wav" type="AudioStream" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 27
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "botao_dificil"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("StartButton3:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.85, 0.85 ), Vector2( 0.8, 0.8 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "botao_facil"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("StartButton:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.85, 0.85 ), Vector2( 0.8, 0.8 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "botao_medio"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("StartButton2:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.85, 0.85 ), Vector2( 0.8, 0.8 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "botao_quit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("QuitButton:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.85, 0.85 ), Vector2( 0.8, 0.8 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "botao_why"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("WhyButton:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.85, 0.85 ), Vector2( 0.8, 0.8 ) ]
+}
+
+[node name="MenuScene" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 998.482 ],
+"_edit_vertical_guides_": [ -402.335, 1668.97, 53.1658 ]
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( -5.16101, -5.30037 )
+scale = Vector2( 1.00944, 1.00948 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 42.7334
+margin_top = 911.931
+margin_right = 293.733
+margin_bottom = 1033.93
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 1 )
+icon = ExtResource( 4 )
+flat = true
+
+[node name="WhyButton" type="Button" parent="."]
+margin_left = 1065.0
+margin_top = 603.0
+margin_right = 1477.0
+margin_bottom = 725.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 1 )
+icon = ExtResource( 5 )
+flat = true
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 1065.0
+margin_top = 293.0
+margin_right = 1477.0
+margin_bottom = 416.0
+rect_scale = Vector2( 0.8, 0.8 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+icon = ExtResource( 6 )
+flat = true
+
+[node name="StartButton2" type="Button" parent="."]
+margin_left = 1065.0
+margin_top = 393.0
+margin_right = 1477.0
+margin_bottom = 516.0
+rect_scale = Vector2( 0.8, 0.8 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+icon = ExtResource( 7 )
+flat = true
+
+[node name="StartButton3" type="Button" parent="."]
+margin_left = 1065.0
+margin_top = 498.0
+margin_right = 1477.0
+margin_bottom = 620.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 1 )
+icon = ExtResource( 8 )
+flat = true
+
+[node name="Credits" type="RichTextLabel" parent="."]
+margin_left = 2760.56
+margin_top = -300.658
+margin_right = 3196.56
+margin_bottom = -160.658
+custom_fonts/normal_font = SubResource( 2 )
+text = "Programming: Tzoop Icons: Game-icons.net Font: Symtext"
+scroll_active = false
+
+[node name="Click_mouse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+
+[node name="button_animation" type="AnimationPlayer" parent="."]
+anims/botao_dificil = SubResource( 3 )
+anims/botao_facil = SubResource( 4 )
+anims/botao_medio = SubResource( 5 )
+anims/botao_quit = SubResource( 6 )
+anims/botao_why = SubResource( 7 )
+
+[connection signal="button_down" from="QuitButton" to="." method="_on_QuitButton_button_down"]
+[connection signal="button_down" from="WhyButton" to="." method="_on_WhyButton_button_down"]
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="StartButton2" to="." method="_on_StartButton2_pressed"]
+[connection signal="pressed" from="StartButton3" to="." method="_on_StartButton3_pressed"]
