@@ -1,37 +1,21 @@
-# bichometrico_memoria_game
- Godot project using GDScript made for the Bichometrico Memory Game
+# Memory Game
 
 
-I used the source code from: 
+A memory game (finding pairs of cards)
 
-https://github.com/Tzoop/MemoryGame; 
+- This is made using Godot Engine 3
 
-The soundtrack is from: 
+- The scripts are written in gdscript
 
-https://devdevious.itch.io
-(https://www.patreon.com/sharkybutt)
+- [Memory Game on itch.io](https://tzoop.itch.io/memory-game) <- Here this game can be played and downloaded. 
 
-The sound effects are 
+![Screenshot Menu](https://github.com/Tzoop/MemoryGame/blob/master/screenshots_for_readme_github/MemoryGameMenuScreenshot.png)
 
-1) https://freesound.org/people/NenadSimic/ 
-2) https://freesound.org/people/suntemple/ 
-3) https://freesound.org/people/mickleness/ 
-4) https://opengameart.org/users/haeldb
-
-The source code has undergone some extra implementations, to be able to create the different levels and 
-some effects of transition and animation of victory, besides to remove some texts just for aesthetic purpose.
-I cleaned some variables and re-organized small code lines that I found to be better suited for my case, 
-but the source code base follows the same.
+![Screenshot Game](https://github.com/Tzoop/MemoryGame/blob/master/screenshots_for_readme_github/MemoryGamePlayingScreenshot1.png)
 
 
-Feel free to use the game for your intended purpose (commercial, educational), 
-including sprites created specifically for the specific case.
+# License
 
-you can download the game here:
+- CCO (Creative Commons 1.0 Universal)
 
-https://play.google.com/store/apps/details?id=com.cohbo.bichometricomemoria_release_1&hl=pt_BR
-
-
-PS: 
-I will organize the file divided correctly here in github, 
-but for now, for lack of time, I just sent in .rar
+- Icons used are licensed CC BY 3.0 and can be found here: [Game-Icons](https://game-icons.net/)
